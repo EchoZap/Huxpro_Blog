@@ -1,78 +1,17 @@
 ---
 layout: post
-title: "Ronan Blog「from Hux」上传脚本"
+title: "Ronan Blog上传脚本"
 author: "Ronan"
 header-style: text
 tags:
   - tools
 ---
 
-> 改脚本适用于黄玄博客模板仓库
->
-> 可以批量修改本地文件夹中所有md文件的头部元数据以适应仓库提交格式
+# 用法
 
-```shell
-#!/usr/bin/env bash
+- 在代码的最后几行空白引号里填入相应信息
+- **注意** `create_new_file_in_the_repo` 函数里的 `branch="main"` 参数，根据自身仓库分支修改
 
-# 检查是否提供了目录路径参数
-if [[ $# != 1 ]]; then
-    echo "Usage: $0 <directory>"
-    exit 1
-fi
-
-# 检查目录是否存在
-if [ ! -d "$1" ]; then
-    echo "Directory '$1' not found."
-    exit 1
-fi
-
-
-read -p ""
-
-for file in "$1"/*.md; do
-    # 获取文件名（不带后缀名、未加日期时间前缀以及绝对路径）
-    issue_name=${${file%.md}##*/}
-
-    # 定义要追加的内容
-    cont="---
-layout:       post
-title:        "${issue_name}"
-author:       "Ronan"
-header-style: text
-catalog:      true
-tags:
-    - linux
-    - shell
----"
-
-    # 获取（/Users/iaa/Desktop/s）
-    pre_name=${file%/*}
-
-    # posts_name获取（2024-05-17-filename.md）
-    posts_name="$(date +%Y-%m-%d)-${file##*/}"
-
-    new_name="${pre_name}/${posts_name}"
-    mv $file $new_name
-
-    # 创建临时文件存储内容
-    temp=$(mktemp)
-
-    # 将内容写入临时文件
-    {
-    echo "$cont"
-    echo "" # 添加一个空行
-    cat "$new_name"
-    } > "$temp"
-
-    # 用临时文件的内容覆盖原文件
-    mv "$temp" "$new_name"
-
-    echo "Content added to the top of $new_name successfully."
-
-done
-
-echo "All jobs done..."
-```
 
 ```python
 import os
@@ -113,7 +52,7 @@ class HuxBlog:
 
     def create_new_file_in_the_repo(self, file_path, content):
         # 第一个参数：要上传到仓库的哪个路径; 第二个参数：commit 信息; 第三个参数：上传文档正文; 第四个参数：上传的分支
-        self.repo.create_file(f"{file_path}", f"Added {file_path}", content, branch="master")
+        self.repo.create_file(f"{file_path}", f"Added {file_path}", content, branch="main")
 
     def get_post_paths(self):
         directory = input("请输入文章目录：")
