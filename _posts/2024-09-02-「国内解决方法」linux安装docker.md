@@ -39,7 +39,6 @@ bash -c "$(curl -sSLf https://xy.ggbond.org/xy/docker_pull.sh)" -s 完整镜像�
     <summary>点我查看docker_pull.sh</summary>
     <pre><code>
    
-```zsh
 #!/bin/bash
 # shellcheck shell=bash
 # shellcheck disable=SC2086
@@ -183,7 +182,6 @@ else
     done
     docker_pull "${pull_img}"
 fi
-```
 </code></pre>
 </details>
 
@@ -192,7 +190,8 @@ fi
 在执行完上面的安装步骤后使用 docker 命令，可能遇到以下警告：
 
 ```bash
-iaa@ubuntu:~/desktop$ docker images
+$ docker images
+
 permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Head "http://%2Fvar%2Frun%2Fdocker.sock/_ping": dial unix /var/run/docker.sock: connect: permission denied
 ```
 
