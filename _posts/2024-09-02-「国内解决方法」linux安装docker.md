@@ -186,3 +186,18 @@ fi
 ```
 </code></pre>
 </details>
+
+# 3.授予 docker sudo 权限
+
+在执行完上面的安装步骤后使用 docker 命令，可能遇到以下警告：
+
+```bash
+iaa@ubuntu:~/desktop$ docker images
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Head "http://%2Fvar%2Frun%2Fdocker.sock/_ping": dial unix /var/run/docker.sock: connect: permission denied
+```
+
+这是因为 docker 没有 root 的权限，通过以下命令授权即可解决：
+
+```
+sudo usermod -aG docker $USER
+```
