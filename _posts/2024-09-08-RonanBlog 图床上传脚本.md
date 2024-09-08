@@ -54,7 +54,7 @@ def main():
             img = img.get_img_content(img_path)
             img_name = os.path.basename(img_path) # 获取带扩展名的文件名
 
-            img.create_new_file(img_name, img_base64)
+            img.create_new_file(img_name, img)
 
             print(f"{img_name}上传成功")
             print(f"https://img.ronan.us.kg/blog_imgs/{img_name}")
