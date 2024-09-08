@@ -19,11 +19,11 @@ class Imgs:
         # 第一个参数：要上传到仓库的哪个路径; 第二个参数：commit 信息; 第三个参数：上传文档正文; 第四个参数：上传的分支
         self.repo.create_file(f"blog_imgs/{img}", f"Newfiles: {img} ", content, branch="main")
 
-    def get_img_content(self, img):
-        with open(img, "rb") as image_file:
-            img = image_file.read()
+    def get_img_content(self, img_path):
+        with open(img_path, "rb") as image_file:
+            img_content = image_file.read()
 
-        return img
+        return img_content
 
 
 def main():
@@ -42,10 +42,10 @@ def main():
 
     for img_path in args.input_file:
         try:
-            img = img.get_img_content(img_path)
+            img_content = img.get_img_content(img_path)
             img_name = os.path.basename(img_path) # 获取带扩展名的文件名
 
-            img.create_new_file(img_name, img)
+            img.create_new_file(img_name, img_content)
 
             print(f"{img_name}上传成功")
             print(f"https://img.ronan.us.kg/blog_imgs/{img_name}")
