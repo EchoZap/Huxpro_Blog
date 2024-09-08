@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "RonanBlog 图床上次脚本"
+title: "RonanBlog 图床上传脚本"
 author: "Ronan"
 header-style: text
 tags:
