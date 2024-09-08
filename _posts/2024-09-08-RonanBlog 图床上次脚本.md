@@ -1,0 +1,67 @@
+---
+layout: post
+title: "RonanBlog 图床上次脚本"
+author: "Ronan"
+header-style: text
+tags:
+  - docs
+---
+
+在 `35-37`行填入相应信息并将代码保存为 imgs.py，使用方法：`usage: imgs.py [-h] input_file [input_file ...]`
+
+```python
+from github import Github
+import os
+import argparse
+import base64
+
+class Imgs:
+    def __init__(self, owner=None, repo=None, token=None):
+        self.owner = owner
+        self.repo = repo
+        self.token = token
+
+        g = Github(self.token)
+        self.repo = g.get_repo(f"{self.owner}/{self.repo}")
+
+    def create_new_file(self, img, content):
+        # 第一个参数：要上传到仓库的哪个路径; 第二个参数：commit 信息; 第三个参数：上传文档正文; 第四个参数：上传的分支
+        self.repo.create_file(f"blog_imgs/{img}", f"Newfiles: {img} ", content, branch="main")
+
+    def get_img_content(self, img):
+        with open(img, "rb") as image_file:
+            img = image_file.read()
+
+        return img
+
+
+def main():
+    parser = argparse.ArgumentParser(description="基于 echozap/imgs 的图床上传")
+
+    # 传递的图片数量不确定
+    parser.add_argument('input_file', type=str, nargs='+', help='输入图片的路径')
+
+    args = parser.parse_args()
+
+    img = Imgs(
+        owner = "",
+        repo = "",
+        token = ""
+    )
+
+    for img_path in args.input_file:
+        try:
+            img = img.img_to_base64(img_path)
+            img_name = img_path.split('/')[-1] # 获取带扩展名的文件名
+
+            img.create_new_file(img_name, img_base64)
+
+            print(f"{img_name}上传成功")
+            print(f"https://img.ronan.us.kg/blog_imgs/{img_name}")
+        except Exception as e:
+            print(f"上传 {img_path} 时发生错误: {e}")
+
+
+if __name__ == "__main__":
+    main()
+```
