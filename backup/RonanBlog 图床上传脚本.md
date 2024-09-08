@@ -50,8 +50,10 @@ def main():
             print(f"{img_name}上传成功")
             print(f"https://img.ronan.us.kg/blog_imgs/{img_name}")
         except Exception as e:
-            print(f"上传 {img_path} 时发生错误: {e}")
-
+            if '"status": "422"' in str(e):
+                print(f"上传 {img_path} 时发生错误: {e}")
+                print("图片已存在")
+                print(f"https://img.ronan.us.kg/blog_imgs/{img_name}")
 
 if __name__ == "__main__":
     main()
