@@ -42,7 +42,7 @@ def main():
 
     for img_path in args.input_file:
         try:
-            img = img.img_to_base64(img_path)
+            img = img.get_img_content(img_path)
             img_name = os.path.basename(img_path) # 获取带扩展名的文件名
 
             img.create_new_file(img_name, img_base64)
