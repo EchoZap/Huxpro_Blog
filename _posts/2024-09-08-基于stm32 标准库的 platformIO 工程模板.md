@@ -6,7 +6,6 @@ header-style: text
 tags:
   - docs
 ---
-
 > 本教程默认用户已经安装好 vscode 和 platformIO ！！！
 
 # 1.下载官方标准外设库
@@ -17,9 +16,9 @@ tags:
 
 # 2.在 platformIO 新建一个 CMSIS 工程
 
-图片1
+![NO1](https://img.ronan.us.kg/blog_imgs/PIOproject1.png)
 
-图片2
+![NO2](https://img.ronan.us.kg/blog_imgs/PIOproject2.png)
 
 工程建立成功之后，应该是下面这样：
 
