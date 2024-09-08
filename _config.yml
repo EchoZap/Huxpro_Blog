@@ -75,7 +75,7 @@ netease_comment: false
 # 侧边栏设置 Sidebar settings
 sidebar: true # 是否开启侧边栏 whether or not using Sidebar.
 sidebar-about-description: "要做一个有 swag 的人"
-sidebar-avatar: https://wowpb.pages.dev/file/357e75008597340e26f6b.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: https://img.ronan.us.kg/blog_imgs/avatar.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
 featured-tags: true # whether or not using Feature-Tags
