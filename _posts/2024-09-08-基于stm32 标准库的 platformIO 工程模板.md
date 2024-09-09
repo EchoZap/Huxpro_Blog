@@ -276,3 +276,47 @@ make: *** [Makefile:151：Debug] 错误 2
 
 - 解决方法：
   把该文件删除，之后 clean -> bulid
+
+# 5.程序烧录
+
+以STM32芯片程序烧写为例，最基础的方法是通过串口烧写，目前大部分烧写工具都是通过串口连接后使用.hex文件烧写，由于PlatformIO编译默认生成的是.bin和.elf文件，如果我们需要用hex文件通过其他烧写工具烧写的话需要使用一个python脚本将.elf文件转换为.hex文件。
+
+当然PlatformIO本身也支持串口烧写，所以我们一个一个来讲。
+
+### 5.1生成 hex 文件
+
+我们在项目的根目录下（和`platformio.ini`文件同级）新建一个`export_hex.py`，内容如下：
+
+```python
+Import("env")
+ 
+# # Custom HEX from ELF
+ 
+env.AddPostAction(
+ 
+    "$BUILD_DIR/${PROGNAME}.elf",
+ 
+    env.VerboseAction(" ".join([
+ 
+        "$OBJCOPY", "-O", "ihex", "-R", ".eeprom",
+ 
+        '"$BUILD_DIR/${PROGNAME}.elf"', '"$BUILD_DIR/${PROGNAME}.hex"'  # 加个单引号
+ 
+    ]), "Building $BUILD_DIR/${PROGNAME}.hex")
+ 
+)
+```
+
+然后在platformio.ini文件里添加一行`extra_scripts = export_hex.py`，使其在每次编译后运行一遍这个脚本。
+
+至此，重新编译后，就会在`.pio/build/<你的嵌入式芯片型号>/`目录下多生成一个`firmware.hex`程序，然后打开其他烧写程序工具，选择这个程序就可以成功烧写了。
+
+### 5.2 PlatformIO程序烧写
+
+platformIO在有串口接入的情况下默认使用的是串口烧写程序，但是出于严谨和方便维护的情况下，严格的配置方式是在`platformio.ini`文件中配置烧写方式为串口(`upload_protocol = serial`)。
+
+点击编译按钮隔壁的”Upload”按钮，platformIO就会开始自动寻找对应的COM口，并自动烧写。
+
+以STM32为例，platformIO使用的是它下载下来的stm32flash工具烧写的，如果需要自定义的话，可以将upload\_protocol设为custom，并自定义烧写命令。  
+
+至此，实现串口烧写程序。
