@@ -6,14 +6,13 @@ header-style: text
 tags:
   - docs
 ---
-
 # 对象概述
 
 什么是对象？对象（object）是 JavaScript 语言的核心概念，也是最重要的数据类型
 
 简单说，对象就是一组“键值对”（key-value）的集合，是一种无序的复合数据集合
 
-![image-20211025173456785](https://wowpb.pages.dev/file/b4faace2de4b182e5e956.png)
+![img](https://imgs-dx3.pages.dev/blog_imgs/js1.png)
 
 ```js
 var user = {
@@ -48,8 +47,6 @@ var user = {
 }
 user.container.frontEnd // ["Web前端","Android","iOS"]
 ```
-
-
 
 # Math对象
 
@@ -121,7 +118,6 @@ function ToInteger(x) {
 ToInteger(-10.4); // 向下取整：10
 ```
 
-
 # Date对象
 
 `Date`对象是 JavaScript 原生的时间库。它以1970年1月1日00:00:00作为时间的零点，可以表示的时间范围是前后各1亿天（单位为毫秒）
@@ -189,7 +185,6 @@ function leftDays() {
 }
 ```
 
-
 # DOM概述
 
 DOM 是 JavaScript 操作网页的接口，全称为“文档对象模型”（Document Object Model）。它的作用是将网页转为一个 JavaScript 对象，从而可以用脚本进行各种操作（比如对元素增删内容）
@@ -245,8 +240,6 @@ document
 document.nodeType // 9
 document.nodeType === Node.DOCUMENT_NODE // true
 ```
-
-
 
 ## document对象_方法/获取元素
 
@@ -314,8 +307,6 @@ var el1 = document.querySelector('.myclass');
 ```js
 var elementList = document.querySelectorAll('.myclass');
 ```
-
-
 
 ## document对象_方法/创建元素
 
@@ -425,8 +416,6 @@ el.innerHTML = '';
 var div = document.getElementById('myDiv');
 div.classList.___('myCssClass');
 ```
-
-
 
 ## Element获取元素位置
 
@@ -540,8 +529,6 @@ document.documentElement.___
 document.documentElement.___
 ```
 
-
-
 # CSS操作
 
 ### `HTML` 元素的 `style` 属性
@@ -587,8 +574,6 @@ var divStyle = document.querySelector('div');
 divStyle.___.backgroundColor = 'red';
 ```
 
-
-
 # 事件处理程序
 
 事件处理程序分为：
@@ -616,7 +601,7 @@ divStyle.___.backgroundColor = 'red';
             }
         </script>
     </body>
-</html> 
+</html>
 ```
 
 ### DOM0级事件处理
@@ -670,8 +655,6 @@ btn2.addEventListener('click',function(){
 })
 ```
 
-
-
 # 事件类型之鼠标事件
 
 ### 鼠标事件
@@ -711,8 +694,6 @@ box.___ = function(){
     console.log("事件在元素上会一直触发");
 }
 ```
-
-
 
 # Event事件对象
 
@@ -769,8 +750,6 @@ btn.onclick = function(e){
 }
 ```
 
-
-
 # 事件类型之键盘事件
 
 键盘事件由用户击打键盘触发，主要有keydown、keypress、keyup三个事件
@@ -797,8 +776,6 @@ username.onkeydown = function(e){
     }
 }
 ```
-
-
 
 # 事件类型之表单事件
 
@@ -885,8 +862,6 @@ username.___ = function(e){
 }
 ```
 
-
-
 # 事件代理(事件委托)
 
 由于事件会在冒泡阶段向上传播到父节点，因此可以把子节点的监听函数定义在父节点上，由父节点的监听函数统一处理多个子元素的事件。这种方法叫做事件的代理（delegation）
@@ -913,8 +888,6 @@ parent.addEventListener("click",function(e){
     }
 })
 ```
-
-
 
 # 定时器之`setTimeout()`
 
@@ -992,8 +965,6 @@ var user = {
 user.getName();
 ```
 
-
-
 # 定时器之`setInterval()`
 
 `setInterval`函数的用法与`setTimeout`完全一致，区别仅仅在于`setInterval`指定某个任务每隔一段时间就执行一次，也就是无限次的定时执行
@@ -1057,7 +1028,6 @@ ___(function(){
 },1000)
 ```
 
-
 # 防抖(debounce)
 
 防抖严格算起来应该属于性能优化的知识，但实际上遇到的频率相当高，处理不当或者放任不管就容易引起浏览器卡死。
@@ -1090,7 +1060,7 @@ function debounce(fn,delay){
     let timer = null //借助闭包
     return function() {
         if(timer){
-            clearTimeout(timer) 
+            clearTimeout(timer)
         }
         timer = setTimeout(fn,delay) // 简化写法
     }
@@ -1115,12 +1085,12 @@ window.onscroll = debounce(showTop,300)
 
 ```js
 function debounce(fn,delay){
-    let timer = null 
+    let timer = null
     return function() {
         if(timer){
-            _2_(timer) 
+            _2_(timer)
         }
-        timer = _1_(fn,delay) 
+        timer = _1_(fn,delay)
     }
 }
 function showTop  () {
@@ -1129,8 +1099,6 @@ function showTop  () {
 }
 window.onscroll = debounce(showTop,300)
 ```
-
-
 
 # 节流(throttle)
 
@@ -1156,7 +1124,7 @@ function throttle(fn,delay){
     return function() {
        if(!valid){
            //休息时间 暂不接客
-           return false 
+           return false
        }
        // 工作时间，执行函数并且在间隔期内把状态位设为无效
         valid = false
@@ -1171,7 +1139,7 @@ function showTop  () {
     var scrollTop = document.documentElement.scrollTop;
     console.log('滚动条位置：' + scrollTop);
 }
-window.onscroll = throttle(showTop,300) 
+window.onscroll = throttle(showTop,300)
 ```
 
 如果一直拖着滚动条进行滚动，那么会以300ms的时间间隔，持续输出当前位置和顶部的距离
@@ -1190,7 +1158,7 @@ function throttle(fn,delay){
     let valid = true
     return function() {
        if(_1_){
-           return false 
+           return false
        }
         valid = false
         _2_(function(){
