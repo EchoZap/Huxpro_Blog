@@ -104,7 +104,11 @@ framework = cmsis
 upload_protocol = jlink
 
 ; 这里配置头文件搜索路径，后面的 —D 则是全局定义一些配置，具体可以在 stm32f4xx.h 查询，这里照抄即可，有能力的可以自行配置
-build_flags = -Iinclude -Isrc/STM32F4xx_StdPeriph_Driver/inc -D USE_STDPERIPH_DRIVER -D STM32F40XX
+build_flags =
+    -Iinclude
+    -Isrc/STM32F4xx_StdPeriph_Driver/inc
+    -D USE_STDPERIPH_DRIVER
+    -D STM32F40XX
 ```
 
 # 4.问题解决
