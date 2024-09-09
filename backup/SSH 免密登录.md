@@ -8,7 +8,7 @@ ssh-keygen
 
 之后一路回车，不出意外的话，你将看到以下内容
 
-![img](https://cdn.jsdelivr.net/gh/EchoZap/echozap.github.io@main/static/imgs/ssh-keygen.png)
+![img](https://imgs-dx3.pages.dev/blog_imgs/ssh-keygen.png)
 
 恭喜，你已经完成第一步！
 
@@ -24,7 +24,7 @@ ls .ssh
 
 看到以下内容
 
-![img](https://cdn.jsdelivr.net/gh/EchoZap/echozap.github.io@main/static/imgs/ls_.ssh.png)
+![img](https://imgs-dx3.pages.dev/blog_imgs/ls_.ssh.png)
 
 看到其中有`id_ed25519`(私钥))**其中的ed25519在不同设备可能会有不同，有的可能是id_rsa**、`id_ed25519.pub`(公钥)两个文件，恭喜，你已经完成第二步了，离成功更近了！
 
