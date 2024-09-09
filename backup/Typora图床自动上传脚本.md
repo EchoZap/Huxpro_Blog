@@ -32,9 +32,7 @@ apt install jq -y
 base_url=""
 ```
 
-<details>
-    <summary>********点我展开看sh代码*********</summary>
-    <pre><code>
+- sh 脚本代码
 
 ```shell
 #!/bin/bash
@@ -102,8 +100,6 @@ for url in "${image_urls[@]}"; do
     echo "${url}"
 done
 ```       
-</code></pre>
-</details>
 
 
 ## Typroa配置
@@ -146,9 +142,7 @@ pip3 install fire
 base_url = ''
 ```
 
-<details>
-    <summary>********点我展开看py代码*********</summary>
-    <pre><code>
+- py 脚本代码
 
 ```python
 import sys
@@ -200,8 +194,7 @@ def main(*img_paths):
 if __name__ == "__main__":
     fire.Fire(main)
 ```     
- </code></pre>
-</details>
+
 
 ## Typroa配置
 在配置typora之前，还需要对py脚本进行以下处理:
