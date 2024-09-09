@@ -58,10 +58,9 @@ pip3 install requests
 - `owner` 为自己的github用户名
 - `repo` 为自己的Gmeek博客仓库名，一般是 `xxx.github.io`
 
-<details>
-  <summary> 👉点我展开看sh脚本代码================================= </summary>
-  <pre><code>
+- sh 脚本代码
 
+```shell
 #!/usr/bin/env bash
 
 TOKEN=''
@@ -202,13 +201,11 @@ while true;do
         ;;
     esac
 done
-</code></pre>
-</details>
+```
 
-<details>
-  <summary> 👉点我展开看py脚本代码================================= </summary>
-  <pre><code>
+- py 脚本代码
 
+```python
 import json
 import os
 import requests
@@ -293,9 +290,7 @@ if __name__ == "__main__":
         repo = "xxxx.github.io",
         token = "xxxx"
     )
-
-</code></pre>
-</details>
+```
 
 
 ## 2.2运行脚本
