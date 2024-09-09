@@ -1,3 +1,3 @@
-Hey, I'm Luo** (a.k.a. @Ronan), a laid-back youth who majors in Electronic Information Science and Technology, with a bit of knowledge in Computer Science and Art, a 'jack of all trades, master of none'.
+呲个大牙看什么呢，有中文版看什么英文啊？
 
-I have completed the full 'nine-year compulsory education' as mandated by the Compulsory Education Law of the People's Republic of China, and now consider myself a cultured person.
+<s>这次我就原谅你了，当年你点错了</s> 马上切回中文吧
