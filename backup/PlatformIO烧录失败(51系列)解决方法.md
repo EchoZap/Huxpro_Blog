@@ -6,8 +6,8 @@
 ## 解决方法
 
 将main.py里的这一行注释即可
-![解决1](https://imgs-dx3.pages.dev/blog_imgs/PIO2.png)(
+![解决1](https://imgs-dx3.pages.dev/blog_imgs/PIO2.png)
 
 该文件在以下路径
-`~/.platformio/intel_mcs51/builder/main.py`
+`~/.platformio/platforms/intel_mcs51/builder/main.py`
 ![解决2](https://imgs-dx3.pages.dev/blog_imgs/PIO3.png)
