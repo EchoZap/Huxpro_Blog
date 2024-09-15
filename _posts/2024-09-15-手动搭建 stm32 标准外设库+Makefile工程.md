@@ -139,7 +139,7 @@ arm-none-eabi-objcopy -O binary out.elf out.bin
 
 所以，有没有解决办法呢？当然有：
 
-在`my_project`根目录下新建一个`syscalls.c`文件：
+在`my_project/src`目录下新建一个`syscalls.c`文件：
 
 ```c
 #include <sys/types.h>  // 包含必要的类型定义
