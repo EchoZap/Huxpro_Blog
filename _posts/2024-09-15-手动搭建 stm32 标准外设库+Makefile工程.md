@@ -118,3 +118,63 @@ flash:proj
 也可能你完成了上面所有的设置，但是在进行`make`时依然遇到了错误，这时候你就可以通过下面的方法解决：
 
 - 将`my_project`目录下的`stm32\_flash.ld`链接文件的75行（也就是`} >FLASH`这一行的上方）添加`_exit = .;`，否则编译会报错（**注意：这是由于交叉编译器版本的问题**）
+
+# 4.去除警告（可选）
+
+直到你兴致勃勃且成功地运行了`make`命令，可惜结果对于稍有洁癖的你来说简直不能容忍，因为出现了一堆警告信息：
+
+```shell
+/Applications/ArmGNUToolchain/13.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld: /Applications/ArmGNUToolchain/13.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg.a(libc_a-closer.o): in function `_close_r':
+closer.c:(.text._close_r+0xc): warning: _close is not implemented and will always fail
+/Applications/ArmGNUToolchain/13.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld: /Applications/ArmGNUToolchain/13.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg.a(libc_a-lseekr.o): in function `_lseek_r':
+lseekr.c:(.text._lseek_r+0x14): warning: _lseek is not implemented and will always fail
+/Applications/ArmGNUToolchain/13.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld: /Applications/ArmGNUToolchain/13.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg.a(libc_a-readr.o): in function `_read_r':
+readr.c:(.text._read_r+0x14): warning: _read is not implemented and will always fail
+/Applications/ArmGNUToolchain/13.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld: /Applications/ArmGNUToolchain/13.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg.a(libc_a-writer.o): in function `_write_r':
+writer.c:(.text._write_r+0x14): warning: _write is not implemented and will always fail
+/Applications/ArmGNUToolchain/13.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld: warning: out.elf has a LOAD segment with RWX permissions
+arm-none-eabi-objcopy -O ihex out.elf out.hex
+arm-none-eabi-objcopy -O binary out.elf out.bin
+```
+
+所以，有没有解决办法呢？当然有：
+
+在`my_project`根目录下新建一个`syscalls.c`文件：
+
+```c
+#include <sys/types.h>  // 包含必要的类型定义
+
+int _close(int file) {
+    return -1;
+}
+
+int _lseek(int file, int ptr, int dir) {
+    return -1;
+}
+
+int _read(int file, char *ptr, int len) {
+    return 0;
+}
+
+int _write(int file, char *ptr, int len) {
+    return len;
+}
+
+caddr_t _sbrk(int incr) {
+    extern char _end;  // 链接器脚本中定义的堆的起始位置
+    static char *heap_end;
+    char *prev_heap_end;
+
+    if (heap_end == 0) {
+        heap_end = &_end;
+    }
+
+    prev_heap_end = heap_end;
+    heap_end += incr;
+
+    return (caddr_t)prev_heap_end;
+}
+```
+
+再次执行 `make` 即可。
+
