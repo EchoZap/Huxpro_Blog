@@ -96,7 +96,8 @@ clean:
 	rm -f *.o $(PROJECT_NAME).elf $(PROJECT_NAME).hex $(PROJECT_NAME).bin
 
 flash:proj
-	st-flash write $(PROJECT_NAME).bin Ox8000000
+	STM32_Programmer_CLI -c port=SWD -w $(PROJECT_NAME).hex 
+
 ```
 
 将以上内容复制并保存为`Makefile`，将其放到`my_project`工程根目录下
