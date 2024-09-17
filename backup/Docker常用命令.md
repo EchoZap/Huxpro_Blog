@@ -3,21 +3,13 @@
 # 列出所有已下载镜像
 
 ```shell
-❯ docker images
-REPOSITORY        TAG       IMAGE ID       CREATED         SIZE
-ubuntu            latest    ffb64c9b7e8b   3 weeks ago     101MB
-b3log/siyuan      latest    caf98195a3c3   3 weeks ago     220MB
-soulteary/flare   latest    843d799dc8b2   2 months ago    12.8MB
-hello-world       latest    ee301c921b8a   14 months ago   9.14kB
+docker images
 ```
 
 # 列出当前所有容器
 
 ```shell
-❯ docker ps -a
-CONTAINER ID   IMAGE     COMMAND                   CREATED              STATUS
-2295f62c584b   ubuntu    "/bin/sh -c 'while t…"   1 minute ago   Up About a minute
-526462e8b92d   ubuntu    "/bin/bash"               44 minutes ago       Exited (0)
+docker ps -a
 ```
 
 输出详情介绍：
@@ -40,3 +32,27 @@ CONTAINER ID   IMAGE     COMMAND                   CREATED              STATUS
 
 **PORTS:**  容器的端口信息和使用的连接类型（tcp\udp）。
 **NAMES:**  自动分配的容器名称。
+
+# 进入正在运行的容器
+
+```shell
+docker exec -it <container_ID> /bin/bash
+```
+
+# 忘记运行容器时的挂载路径
+
+在运行容器时通过 -v 指定了本机的目录，但是时间久远，记不清当时指定的挂载路径是哪里。
+
+要找出已经运行的 Docker 容器的挂载卷（`-v` 指定的路径），你可以使用以下步骤：
+
+运行以下命令来获取容器的详细信息，包括挂载卷的路径：
+
+```bash
+docker inspect <container_name_or_id>
+```
+
+# 在运行容器时分配内存
+
+```bash
+docker run --memory=<2g 或者 4g 可自行分配大小> <images_name_or_id>
+```
