@@ -21,12 +21,6 @@ sudo curl -fsSL https://github.com/tech-shrimp/docker_installer/releases/downloa
 sudo curl -fsSL https://gitee.com/tech-shrimp/docker_installer/releases/download/latest/linux.sh| bash -s docker --mirror Aliyun
 ```
 
-启动docker
-
-```
-sudo service docker start
-```
-
 # 2.镜像拉取
 
 ```zsh
