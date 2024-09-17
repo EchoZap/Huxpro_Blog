@@ -1,5 +1,18 @@
 ![DockerCheatSheet.png](https://imgs-dx3.pages.dev/blog_imgs/docker_command.png)
 
+# 启动docker 
+
+```shell
+sudo service docker start
+```
+
+# 授予 docker sudo 权限
+
+```shell
+sudo usermod -aG docker $USER
+```
+
+
 # 列出所有已下载镜像
 
 ```shell
