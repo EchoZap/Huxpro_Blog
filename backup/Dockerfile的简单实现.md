@@ -466,13 +466,13 @@ docker login
 2. 给镜像打标签：
 
 ```
-docker tag myubuntu:1.0 your-dockerhub-username/myubuntu:1.0
+docker tag my-images:1.0 your-dockerhub-username/my-images:1.0
 ```
 
 3. 推送镜像到 Docker Hub：
 
 ```
-docker push your-dockerhub-username/myubuntu:1.0
+docker push your-dockerhub-username/my-images:1.0
 ```
 
 ### 总结
