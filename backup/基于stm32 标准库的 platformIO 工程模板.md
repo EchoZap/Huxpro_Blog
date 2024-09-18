@@ -42,7 +42,7 @@ TT
 
 3.打开 `.../STM32F4xx_DSP_StdPeriph_Lib_V1.9.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include` ，将其中的 `stm32f4xx.h` 、`system_stm32f4xx.h`复制到 platform 工程的 include 目录下。
 
-4.打开`.../STM32F4xx_DSP_StdPeriph_Lib_V1.9.0/Project/STM32F4xx_StdPeriph_Templates`，（如果没有 ADC 工程，随便找一个例程即可）将其中的`stm32f4xx_it.h`、`stm32f4xx_conf.h`复制到 platform 工程的 include 目录下；将`stm32f4xx_it.c`复制到 platform 工程的 src 目录中。
+4.打开`.../STM32F4xx_DSP_StdPeriph_Lib_V1.9.0/Project/STM32F4xx_StdPeriph_Templates`，将其中的`stm32f4xx_it.h`、`stm32f4xx_conf.h`复制到 platform 工程的 include 目录下；将`stm32f4xx_it.c`复制到 platform 工程的 src 目录中。
 
 5.将`.../STM32F4xx_DSP_StdPeriph_Lib_V1.9.0/Libraries/STM32F4xx_StdPeriph_Driver`整个目录复制到 platform 工程的 src 目录中。
 
