@@ -3,19 +3,21 @@
 > 以下为个人自用配置文件，如需拷贝使用请把 **插件配置区** 的选项删除或者安装相应的插件。
 
 ```
+
 {
     //插件配置区*****************************************************************************************
 
-    //apc customizeUI++插件，（/Users/einson/Pictures/vscbg/Noisefigure.png 换成自己的文件路径即可实现磨砂效果）
-    "apc.stylesheet": {
-        "body": {
-            "background-image": "url(/Users/iaa/bin/Noisefigure.png), linear-gradient(to top,rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2))",
-            "background-size": "cover",
-            "background-blend-mode": "multiply",
-            "background-repeat": "no-repeat",
-            "opacity": 0.89
-        },
+    //vscode animation 搭配 Apc Customize UI++ 实现果冻光标
+    "animations.Install-Method": "Apc Customize UI++",
+    "apc.imports": [
+        "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
+    ],
+    "animations.CursorAnimation": true,
+    "animations.CursorAnimationOptions": {
+        "Color": "#ffb6c1",
+        "TrailLength": 8
     },
+    "animations.Smooth-Mode": false,
 
     // livliveServer插件
     "liveServer.settings.donotShowInfoMsg": true,
@@ -39,6 +41,9 @@
     //字体大小
     "editor.fontSize": 13,
 
+    //光标样式
+    "editor.cursorStyle": "block",
+
     //控制资源管理器是否应在通过回收站删除文件时要求确认。
     "explorer.confirmDelete": false,
 
@@ -48,7 +53,10 @@
     // 自动重命名配对的HTML/XML标签
     "editor.linkedEditing": true,
 
-    // 彩色缩进
+    //控制是否启用水平括号对指南。
+    "editor.guides.bracketPairsHorizontal": true,
+
+    // 括号对参考线
     "editor.guides.bracketPairs": true,
 
     // 控制每个方括号类型是否具有自己的独立颜色池。
@@ -91,8 +99,12 @@
     "workbench.tree.indent": 24,
 
     // "One Dark Pro Flat"括号对颜色
-    // 如更换其他主题，请更换中括号里的主题名[One Dark Pro Flat]
+    // 如更换其他主题，请更换中括号里的主题名
     "workbench.colorCustomizations": {
+
+        //光标颜色
+        "editorCursor.foreground": "#ffb6c1",
+
         "[One Dark Pro Flat]":{
             "editorBracketHighlight.foreground1":"#e78009",
             "editorBracketHighlight.foreground2":"#22990a",
@@ -108,10 +120,13 @@
 
     //在此数组中添加的每一个设置项的键名，将在所有配置文件中保持相同的值。
     //用来配置在所有配置文件（profiles）中应用的设置项
+    //相当于全局应用
     "workbench.settings.applyToAllProfiles": [
+        // 光标平滑插入动画
         "editor.cursorSmoothCaretAnimation",
+        // 光标闪烁
         "editor.cursorBlinking",
     ],
-
+    "terminal.integrated.inheritEnv": false,
 }
 ``` 
