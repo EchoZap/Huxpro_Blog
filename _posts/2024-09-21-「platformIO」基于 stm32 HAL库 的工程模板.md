@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "「platformIO」搭配 CubeMX 建立stm32工程"
+title: "「platformIO」基于 stm32 HAL库 的工程模板"
 author: "Ronan"
 header-style: text
 tags:
