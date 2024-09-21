@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "基于stm32 标准库的 platformIO 工程模板"
+title: "「platformIO」基于 stm32 标准外设库的工程模板"
 author: "Ronan"
 header-style: text
 tags:
