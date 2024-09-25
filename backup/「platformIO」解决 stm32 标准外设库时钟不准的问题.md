@@ -29,7 +29,7 @@
 将 `PLL_M` 后的`25`修改为 `8`。
 
 
-4.大家`.../STM32F4xx_DSP_StdPeriph_Lib_V1.9.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h`，在其中搜索`HSE_VALUE`找到
+4.找到`.../STM32F4xx_DSP_StdPeriph_Lib_V1.9.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h`，在其中搜索`HSE_VALUE`，找到
 
 ```c
 #if defined(STM32F40_41xxx) || defined(STM32F427_437xx)  || defined(STM32F429_439xx) || defined(STM32F401xx) || \
