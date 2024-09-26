@@ -64,7 +64,7 @@ Remote debugging using : 3333
 
 实现方法：
 
-在工程根目录下的`.vscode`目录中新建一个`launch.json`，其内容：
+在工程根目录下的`.vscode`目录（如果没有该目录可自行创建）中新建一个`launch.json`，其内容：
 
 ```json
 {
