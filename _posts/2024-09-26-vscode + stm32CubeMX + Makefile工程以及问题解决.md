@@ -48,13 +48,22 @@ test
 
 安装 `arm-none-eabi-gcc` 交叉编译链：
 
-- windows：链接: https://caiyun.139.com/m/i?145CFu8T4pzZ9  提取码:ifpa
-- linux：链接: https://caiyun.139.com/m/i?145CFu8QjVMxO  提取码:sXCp
-- macOS：链接: https://caiyun.139.com/m/i?145CFaDB85q9C  提取码:OoEr
+- windows：
+  - 链接: [https://caiyun.139.com/m/i?145CFu8T4pzZ9](https://caiyun.139.com/m/i?145CFu8T4pzZ9)
+  - 提取码:ifpa
+    
+- linux：
+  - 链接: [https://caiyun.139.com/m/i?145CFu8QjVMxO](https://caiyun.139.com/m/i?145CFu8QjVMxO)
+  - 提取码:sXCp
+  
+- macOS：
+  - 链接: [https://caiyun.139.com/m/i?145CFaDB85q9C](https://caiyun.139.com/m/i?145CFaDB85q9C)
+  - 提取码:OoEr
   
 如果你是个 ~~大佬~~ ,当然大佬应该是不会看这种教程的，你喜欢自己构建的话，可以用下面的源码：
 
-- 链接: https://caiyun.139.com/m/i?145CGY0p8xYON  提取码:t3bC
+- 链接: [https://caiyun.139.com/m/i?145CGY0p8xYON](https://caiyun.139.com/m/i?145CGY0p8xYON)
+- 提取码:t3bC
 
 下载安装好编译链之后，将其放入到环境变量 `PATH` 中(至于具体步骤，百度一下，你就知道)
 
