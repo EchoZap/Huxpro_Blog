@@ -35,7 +35,7 @@ test
 
 - 安装 `arm-none-eabi-gcc` 交叉编译链
 - 安装 `openOCD`
-- 安装 `Makefile`
+- 安装 `Make`
 
 安装 `arm-none-eabi-gcc` 交叉编译链：
 
