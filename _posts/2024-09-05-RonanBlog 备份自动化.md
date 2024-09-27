@@ -14,10 +14,9 @@ tags:
 1.在 `仓库根目录` 下新建一个 backup 空目录，「为防止 github 自动忽略空目录，所以可以在backup 里面随便新建一个 t.md」  
 2.将以下代码保存为 `backup.py` 并且放置到 `仓库根目录` 下
 
-<details>
-  <summary>👉👉👉点我查看 backup.py 代码===========================</summary>
-  <pre><code>
+backup.py 源码：
 
+```python
 import os
 import re
 import argparse
@@ -96,15 +95,12 @@ def main():
 
 if __name__ == '__main__':
     main()
-</code></pre>
-</details>
+```
 
 # 修改actions
 将仓库根目录下的 `.github/workflows/jekyll.yml` 内容修改为：
 
-<details>
-  <summary>👉👉👉点我查看修改后的完整 yml 内容======================</summary>
-  <pre><code>
+```yml
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
@@ -117,7 +113,7 @@ name: Deploy Jekyll site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -199,12 +195,13 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-</code></pre>
-</details>
+```
 
 
 #### actions改动的位置
+
 `.github/workflows/jekyll.yml` 改动的位置是：
+
 1. `permissions` 里的 contents 设置为 write
 2. 在 biuld 工作流里添加了关于 backup.py 的使用
 
@@ -220,7 +217,7 @@ name: Deploy Jekyll site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
