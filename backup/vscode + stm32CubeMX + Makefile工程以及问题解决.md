@@ -31,6 +31,8 @@ test
 
 # 创建工程并去掉警告(红色波浪线)
 
+> vscode 需要提前安装 C/C++ 插件
+
 1.在 STM32CubeMX 配置好工程之后，选择 Makefile 导出。
 
 ![建立并导出工程](https://imgs-dx3.pages.dev/blog_imgs/cubemx_makefile_project.png)
@@ -43,7 +45,7 @@ test
 
 解决方法：
 
-1.在工程目录中按下(macos)`cmd+shift+p`，(windows)`ctrl+shift+p`，输入C/C++然后点击`Edit Configurrations(JSON)`选择
+1.在工程目录中按下(macos)`cmd+shift+p`，(windows)`ctrl+shift+p`，输入 `C/C++` 然后点击`Edit Configurrations(JSON)`选择
 
 ![创建 cpp_json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config2.png)
 
