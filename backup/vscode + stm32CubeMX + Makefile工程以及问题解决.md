@@ -29,6 +29,20 @@ test
 └── test.ioc
 ```
 
+# 配置本机环境
+
+1.为了能顺利使用通过 STM32CubeMX 建立的 Makefile 工程，在本地主机需要安装 `arm-none-eabi-gcc` 交叉编译链：
+
+- windows：链接: https://caiyun.139.com/m/i?145CFu8T4pzZ9  提取码:ifpa
+- linux：链接: https://caiyun.139.com/m/i?145CFu8QjVMxO  提取码:sXCp
+- macOS：链接: https://caiyun.139.com/m/i?145CFaDB85q9C  提取码:OoEr
+  
+如果你是个 ~~大佬~~ ,当然大佬是不会这种教程的，你喜欢自己构建的话，可以用下面的源码：
+
+- 链接: https://caiyun.139.com/m/i?145CGY0p8xYON  提取码:t3bC
+
+下载好编译链之后，将其放入到环境变量 `PATH` 中(至于具体步骤，百度一下，你就知道)
+
 # 创建工程并去掉警告(红色波浪线)
 
 > vscode 需要提前安装 C/C++ 插件
@@ -63,9 +77,9 @@ test
 
 
 # 工程调试
-## 使用 openocd + stlink 调试
+### 使用 openocd + stlink 调试
 
-> 以stm32f103举例
+> 以stm32f103举例，**注意：使用该方法调试需要安装 opencod 以及配置者具备较深的专业知识**
 
 1.在终端输入
 
@@ -90,7 +104,7 @@ Reading symbols from ./build/test.elf...
 Remote debugging using : 3333
 ```
 
-## 使用 vscode 的 cortex-debug 插件调试
+### 使用 vscode 的 cortex-debug 插件调试
 
 > 使用此方法，vscode 需要安装 cortex-debug 插件
 
@@ -126,7 +140,7 @@ Remote debugging using : 3333
 
 然后在 main.c 里打上断点，按下`f5`或者在 vscode 顶栏依次点击`运行`->`启用调试` 即可。
 
-## 调试遭遇问题
+### 调试遭遇问题
 
 调试一直卡在 `HAL_Init` 函数里...
 
