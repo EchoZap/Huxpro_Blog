@@ -116,7 +116,6 @@ Remote debugging using : 3333
                 "target/stm32f1x.cfg"
             ],
             "armToolchainPath": "/opt/arm-none-eabi/bin",
-            "preLaunchTask": "openocd debug"
         }
     ]
 }
