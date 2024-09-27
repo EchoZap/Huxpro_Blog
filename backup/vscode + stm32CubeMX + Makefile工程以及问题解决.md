@@ -73,10 +73,10 @@ test
 openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg
 ```
 
-2.**保持上面的终端不要退出，然后开启一个新的终端窗口**，输入以下命令就可以进入 gdb 调试：
+2.**保持上面的终端不要退出，然后开启一个新的终端窗口**，输入以下命令 `arm-none-eabi-gdb -q path/build/<your_project>.elf` 就可以进入 gdb 调试：
 
 ```shell
-❯ arm-none-eabi-gdb -q .../build/<your_project>.elf
+❯ arm-none-eabi-gdb -q path/build/<your_project>.elf
 Reading symbols from .../build/<your_project>.elf...
 (gdb)
 ```
@@ -84,7 +84,7 @@ Reading symbols from .../build/<your_project>.elf...
 接着输入`target remote: 3333`，看见以下内容就可以开始调试了:
 
 ```zsh
-❯ arm-none-eabi-gdb -q ./build/test.elf
+❯ arm-none-eabi-gdb -q path/build/<your_project>.elf
 Reading symbols from ./build/test.elf...
 (gdb) target remote: 3333
 Remote debugging using : 3333
