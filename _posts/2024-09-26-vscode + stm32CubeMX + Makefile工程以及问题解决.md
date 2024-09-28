@@ -144,11 +144,12 @@ Remote debugging using : 3333
 ```json
 {
     "version": "0.2.0",
+
     "configurations": [
         {
             "name": "Cortex Debug",
             "cwd": "${workspaceRoot}",
-            "executable": "build/test.elf", //根据自己工程实际生成最终.elf 路径修改
+            "executable": "${workspaceFolder}/${input:projectName}/build/${input:projectName}.elf",//根据自己工程实际生成最终.elf 路径修改
             "request": "launch",
             "type": "cortex-debug",
             "servertype": "openocd",
@@ -158,12 +159,19 @@ Remote debugging using : 3333
             ],
             "armToolchainPath": "/opt/arm-none-eabi/bin",
         }
+    ],
+
+    "inputs": [
+        {
+            "id": "projectName",
+            "type": "promptString",
+            "description": "请输入你要调试的工程名",
+        }
     ]
 }
-
 ```
 
-然后在 main.c 里打上断点，按下`f5`或者在 vscode 顶栏依次点击`运行`->`启用调试` 即可。
+然后重新 `make` 或者 `make DEBUG=1` ，再按下`f5`或者在 vscode 顶栏依次点击`运行`->`启用调试` 即可。
 
 ### 调试遭遇问题
 
