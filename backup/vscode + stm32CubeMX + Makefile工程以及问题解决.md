@@ -130,7 +130,9 @@ Remote debugging using : 3333
 
 实现方法：
 
-在 vscode 建立一个工作区，将创建的工作区存放到该工作区中，在工作区根目录的`.vscode`目录（如果没有该目录可自行创建）中新建一个`launch.json`，其内容：
+在 vscode 建立一个工作区，将创建的工作区存放到该工作区中，在工作区根目录的`.vscode`目录（如果没有该目录可自行创建）中新建 `launch.json` 和 `tasks.json`。
+
+launch.json:
 
 ```json
 {
@@ -149,6 +151,7 @@ Remote debugging using : 3333
                 "target/stm32f1x.cfg"
             ],
             "armToolchainPath": "/opt/arm-none-eabi/bin",
+            "preLaunchTask": "stm32 build",
         }
     ],
 
@@ -157,6 +160,32 @@ Remote debugging using : 3333
             "id": "projectName",
             "type": "promptString",
             "description": "请输入你要调试的工程名",
+        }
+    ]
+}
+```
+
+tasks.json:
+
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "stm32 build",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/${input:projectName}"
+            },
+            "command": "make",
+            "detail": "任务用于构建 STM32 项目"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "projectName",
+            "type": "promptString",
+            "description": "请输入构建的工程名(应与调试的工程名一致)",
         }
     ]
 }
