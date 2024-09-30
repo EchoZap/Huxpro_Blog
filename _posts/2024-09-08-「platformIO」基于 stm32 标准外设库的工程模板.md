@@ -131,58 +131,11 @@ compiling stm32f4xx_fmc.c...
       FMC_Bank1->BTCR[FMC_Bank] = 0x000030DB;
 ..\..\CodeFile\Bsp\stm32f4xx_fmc.c(149): error:  #20: identifier "FMC_Bank1" is undefined
       FMC_Bank1->BTCR[FMC_Bank] = 0x000030D2;
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(151): error:  #20: identifier "FMC_Bank1" is undefined
-    FMC_Bank1->BTCR[FMC_Bank + 1] = 0x0FFFFFFF;
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(152): error:  #20: identifier "FMC_Bank1E" is undefined
-    FMC_Bank1E->BWTR[FMC_Bank] = 0x0FFFFFFF;
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(191): error:  #20: identifier "FMC_Bank1" is undefined
-    tmpbcr = FMC_Bank1->BTCR[FMC_NORSRAMInitStruct->FMC_Bank];
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(195): error:  #20: identifier "FMC_BCR1_MBKEN" is undefined
-    tmpbcr &= ((uint32_t)~(FMC_BCR1_MBKEN   | FMC_BCR1_MUXEN    | FMC_BCR1_MTYP     | \
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(195): error:  #20: identifier "FMC_BCR1_MUXEN" is undefined
-    tmpbcr &= ((uint32_t)~(FMC_BCR1_MBKEN   | FMC_BCR1_MUXEN    | FMC_BCR1_MTYP     | \
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(195): error:  #20: identifier "FMC_BCR1_MTYP" is undefined
-    tmpbcr &= ((uint32_t)~(FMC_BCR1_MBKEN   | FMC_BCR1_MUXEN    | FMC_BCR1_MTYP     | \
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(196): error:  #20: identifier "FMC_BCR1_MWID" is undefined
-                           FMC_BCR1_MWID     | FMC_BCR1_FACCEN   | FMC_BCR1_BURSTEN  | \
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(196): error:  #20: identifier "FMC_BCR1_FACCEN" is undefined
-                           FMC_BCR1_MWID     | FMC_BCR1_FACCEN   | FMC_BCR1_BURSTEN  | \
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(196): error:  #20: identifier "FMC_BCR1_BURSTEN" is undefined
-                           FMC_BCR1_MWID     | FMC_BCR1_FACCEN   | FMC_BCR1_BURSTEN  | \
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(197): error:  #20: identifier "FMC_BCR1_WAITPOL" is undefined
-                           FMC_BCR1_WAITPOL  | FMC_BCR1_WRAPMOD  | FMC_BCR1_WAITCFG  | \
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(197): error:  #20: identifier "FMC_BCR1_WRAPMOD" is undefined
-                           FMC_BCR1_WAITPOL  | FMC_BCR1_WRAPMOD  | FMC_BCR1_WAITCFG  | \
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(197): error:  #20: identifier "FMC_BCR1_WAITCFG" is undefined
-                           FMC_BCR1_WAITPOL  | FMC_BCR1_WRAPMOD  | FMC_BCR1_WAITCFG  | \
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(198): error:  #20: identifier "FMC_BCR1_WREN" is undefined
-                           FMC_BCR1_WREN     | FMC_BCR1_WAITEN   | FMC_BCR1_EXTMOD   | \
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(198): error:  #20: identifier "FMC_BCR1_WAITEN" is undefined
-                           FMC_BCR1_WREN     | FMC_BCR1_WAITEN   | FMC_BCR1_EXTMOD   | \
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(198): error:  #20: identifier "FMC_BCR1_EXTMOD" is undefined
-                           FMC_BCR1_WREN     | FMC_BCR1_WAITEN   | FMC_BCR1_EXTMOD   | \
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(199): error:  #20: identifier "FMC_BCR1_ASYNCWAIT" is undefined
-                           FMC_BCR1_ASYNCWAIT| FMC_BCR1_CBURSTRW | FMC_BCR1_CCLKEN));
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(199): error:  #20: identifier "FMC_BCR1_CBURSTRW" is undefined
-                           FMC_BCR1_ASYNCWAIT| FMC_BCR1_CBURSTRW | FMC_BCR1_CCLKEN));
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(199): error:  #20: identifier "FMC_BCR1_CCLKEN" is undefined
-                           FMC_BCR1_ASYNCWAIT| FMC_BCR1_CBURSTRW | FMC_BCR1_CCLKEN));
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(253): error:  #20: identifier "FMC_Bank1E" is undefined
       tmpbwr = FMC_Bank1E->BWTR[FMC_NORSRAMInitStruct->FMC_Bank];
 ..\..\CodeFile\Bsp\stm32f4xx_fmc.c(256): error:  #20: identifier "FMC_BWTR1_ADDSET" is undefined
-      tmpbwr &= ((uint32_t)~(FMC_BWTR1_ADDSET  | FMC_BWTR1_ADDHLD | FMC_BWTR1_DATAST | \
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(256): error:  #20: identifier "FMC_BWTR1_ADDHLD" is undefined
-      tmpbwr &= ((uint32_t)~(FMC_BWTR1_ADDSET  | FMC_BWTR1_ADDHLD | FMC_BWTR1_DATAST | \
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(256): error:  #20: identifier "FMC_BWTR1_DATAST" is undefined
-      tmpbwr &= ((uint32_t)~(FMC_BWTR1_ADDSET  | FMC_BWTR1_ADDHLD | FMC_BWTR1_DATAST | \
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(257): error:  #20: identifier "FMC_BWTR1_BUSTURN" is undefined
-                             FMC_BWTR1_BUSTURN | FMC_BWTR1_ACCMOD));
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(257): error:  #20: identifier "FMC_BWTR1_ACCMOD" is undefined
                              FMC_BWTR1_BUSTURN | FMC_BWTR1_ACCMOD));
 ..\..\CodeFile\Bsp\stm32f4xx_fmc.c(269): error:  #20: identifier "FMC_Bank1E" is undefined
       FMC_Bank1E->BWTR[FMC_NORSRAMInitStruct->FMC_Bank] = 0x0FFFFFFF;
-..\..\CodeFile\Bsp\stm32f4xx_fmc.c(321): error:  #20: identifier "FMC_Bank1" is undefined
-      FMC_Bank1->BTCR[FMC_Bank] |= BCR_MBKEN_SET;
 ..\..\CodeFile\Bsp\stm32f4xx_fmc.c(326): error:  #20: identifier "FMC_Bank1" is undefined
       FMC_Bank1->BTCR[FMC_Bank] &= BCR_MBKEN_RESET;
 ..\..\CodeFile\Bsp\stm32f4xx_fmc.c(394): error:  #20: identifier "FMC_Bank2" is undefined
@@ -218,31 +171,8 @@ Found 0 compatible libraries
 Scanning dependencies...
 No dependencies
 Building in debug mode
+...
 Compiling .pio/build/genericSTM32F103ZE/FrameworkCMSIS/gcc/startup_stm32f103xe.o
-Compiling .pio/build/genericSTM32F103ZE/FrameworkCMSIS/system_stm32f1xx.o
-Compiling .pio/build/genericSTM32F103ZE/src/CORE/core_cm3.o
-Compiling .pio/build/genericSTM32F103ZE/src/HARDWARE/LED/led.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/misc.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_adc.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_bkp.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_can.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_cec.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_crc.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_dac.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_dbgmcu.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_dma.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_exti.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_flash.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_fsmc.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_gpio.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_i2c.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_iwdg.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_pwr.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_rcc.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_rtc.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_sdio.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_spi.o
-Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_tim.o
 Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_usart.o
 Compiling .pio/build/genericSTM32F103ZE/src/STM32F10x_FWLib/src/stm32f10x_wwdg.o
 Compiling .pio/build/genericSTM32F103ZE/src/SYSTEM/delay/delay.o
@@ -251,6 +181,7 @@ Compiling .pio/build/genericSTM32F103ZE/src/SYSTEM/usart/usart.o
 Compiling .pio/build/genericSTM32F103ZE/src/main.o
 Compiling .pio/build/genericSTM32F103ZE/src/stm32f10x_it.o
 Compiling .pio/build/genericSTM32F103ZE/src/system_stm32f10x.o
+...
 src/SYSTEM/usart/usart.c:38:0: warning: ignoring #pragma import  [-Wunknown-pragmas]
  #pragma import(__use_no_semihosting)
 
