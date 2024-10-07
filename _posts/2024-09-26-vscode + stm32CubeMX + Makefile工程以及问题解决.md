@@ -73,15 +73,15 @@ test
 
 > vscode 需要提前安装 C/C++ 插件
 
-1.新建一个 STM32CubeMX_projects 目录(以后的工程就统一放置在该目录下，建议不要放置在桌面，放在自己容易记忆的位置)，然后使用 vscode 打开该目录，并且将其保存为工作区：
+1.新建一个 STM32CubeMX_projects 目录(以后的工程就统一放置在该目录下，建议不要放置在桌面，放在自己容易记忆的位置)，然后使用 vscode 打开该目录，并且将其保存为工作区，将工作区文件保存在希望的位置，以后可以通过双击该文件直接打开 STM32CubeMX_projects 工作区：
 
 ![设立工作区](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config1.png)
 
-将工作区文件保存在希望的位置，以后可以通过双击该文件直接打开 STM32CubeMX_projects 工作区。
 
-2.在 STM32CubeMX 配置好工程之后，选择 Makefile 导出：
+2.在 STM32CubeMX 配置好工程，点击左侧选项卡，然后勾选绿色框里的选项选择 Makefile 导出：
 
-![建立并导出工程](https://imgs-dx3.pages.dev/blog_imgs/cubemx_makefile_project.png)
+![建立并导出工程](https://imgs-dx3.pages.dev/blog_imgs/cubemx_makefile_project1.png)
+![建立并导出工程](https://imgs-dx3.pages.dev/blog_imgs/cubemx_makefile_project2.png)
 
 3.使用 vscode 打开该工程目录，点开`./Core/Src/main.c`，你会发现：满是令人高血压的红色波浪线，难以忍受
 
