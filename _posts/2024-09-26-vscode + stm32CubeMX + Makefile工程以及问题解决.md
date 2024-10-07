@@ -7,6 +7,7 @@ tags:
   - docs
   - bug
 ---
+
 通过 STM32CubeMX 建立的 Makefile 工程，应该会有以下结构：
 
 ```shell
@@ -38,7 +39,7 @@ test
 └── test.ioc
 ```
 
-# 配置本机环境
+# 1.配置本机环境
 
 为了能顺利使用通过 STM32CubeMX 建立的 Makefile 工程，你需要先安装完成以下准备：
 
@@ -68,41 +69,57 @@ test
 下载安装好编译链之后，将其放入到环境变量 `PATH` 中(至于具体步骤，百度一下，你就知道)
 
 
-# 创建工程并去掉警告(红色波浪线)
+# 2.创建工程并去掉警告(红色波浪线)
 
 > vscode 需要提前安装 C/C++ 插件
 
-1.在 STM32CubeMX 配置好工程之后，选择 Makefile 导出。
+1.新建一个 STM32CubeMX_projects 目录(以后的工程就统一放置在该目录下，建议不要放置在桌面，放在自己容易记忆的位置)，然后使用 vscode 打开该目录，并且将其保存为工作区：
+
+![设立工作区](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config1.png)
+
+将工作区文件保存在希望的位置，以后可以通过双击该文件直接打开 STM32CubeMX_projects 工作区。
+
+2.在 STM32CubeMX 配置好工程之后，选择 Makefile 导出：
 
 ![建立并导出工程](https://imgs-dx3.pages.dev/blog_imgs/cubemx_makefile_project.png)
 
-2.使用 vscode 打开该工程目录，点开`./Core/Src/main.c`，你会发现：满是令人高血压的红色波浪线，难以忍受
+3.使用 vscode 打开该工程目录，点开`./Core/Src/main.c`，你会发现：满是令人高血压的红色波浪线，难以忍受
 
-![红色波浪线](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config1.png)
+![红色波浪线](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config2.png)
 
 ---
 
 解决方法：
 
-1.在工程目录中按下(macos)`cmd+shift+p`，(windows)`ctrl+shift+p`，输入 `C/C++` 然后点击`Edit Configurrations(JSON)`选择
+1.在工作区根目录中按下(macos)`cmd+shift+p`，(windows)`ctrl+shift+p`，输入 `C/C++` 然后点击`Edit Configurrations(JSON)`选择
 
-![创建 cpp_json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config2.png)
+![创建 cpp_json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config3.png)
 
-2.接下来 vscode 会在你的工程根目录下创建一个.vscode目录和一个 c_cpp_properties.json ，默认情况下你在 c_cpp_properties.json 会看到以下内容
+2.接下来 vscode 会在你的工作区根目录下创建一个 .vscode 目录和一个 c_cpp_properties.json ，默认情况下你在 c_cpp_properties.json 会看到以下内容
 
-![ cpp_json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config3.png)
+![cpp_json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config4.png)
 
 3.打开工程根目录的`Makefile`，找到`#C defines`（也就是宏定义这部分），然后`复制绿色框里的内容`
 
-![Makefile](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config4.png)
+![Makefile](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config5.png)
 
-4.回到`c_cpp_properties.json`，将上面复制的内容按以下格式粘贴到`"defines"`的中括号里，如果` includePath`选项没有默认创建，你也可以自行手动添加，就像下面这样：
+4.回到`c_cpp_properties.json`，将上面复制的内容按 `以下格式(一定要注意格式)` 粘贴到`"defines"`的中括号里，就像下面这样：
 
-![c_cpp_properties.json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config5.png)
+![c_cpp_properties.json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config6.png)
 
+5.打开工程根目录的`Makefile`，找到`#C includes`（也就是头文件搜索这部分），然后`复制绿色框里的内容`
 
-# 工程调试
-### 使用 openocd + stlink 调试
+![Makefile](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config7.png)
+
+6.回到`c_cpp_properties.json`，将上面复制的内容按 `以下格式(一定要注意格式)` 粘贴到`"includePath"`的中括号里，自带的第一行不要删除，在后面加上英文的逗号即可。
+将复制的内容前面的 -D 替换为工程名，这里的工程名是test，将所有内容使用英文引号包裹，每一行后面使用英文逗号结尾，最后一行不使用逗号，就像下面这样：
+
+> 以后每新增加一个工程都可用一样的方法，区别是替换的 `-D` 的工程名要修改为你希望添加的工程名
+
+![c_cpp_properties.json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config8.png)
+
+# 3.工程调试
+### 3.1使用 openocd + stlink 调试
 
 > 以stm32f103举例，**注意：使用该方法调试需要安装 opencod 以及配置者具备较深的专业知识**
 
@@ -129,7 +146,7 @@ Reading symbols from ./build/test.elf...
 Remote debugging using : 3333
 ```
 
-### 使用 vscode 的 cortex-debug 插件调试
+### 3.2使用 vscode 的 cortex-debug 插件调试
 
 > 使用此方法，vscode 需要安装 cortex-debug 插件
 
@@ -139,7 +156,7 @@ Remote debugging using : 3333
 
 实现方法：
 
-在 vscode 建立一个工作区，将创建的工作区存放到该工作区中，在工作区根目录的`.vscode`目录（如果没有该目录可自行创建）中新建 `launch.json` 和 `tasks.json`。
+在工作区根目录的`.vscode`目录（如果没有该目录可自行创建）中新建 `launch.json` 和 `tasks.json`。
 
 launch.json:
 
@@ -200,9 +217,9 @@ tasks.json:
 }
 ```
 
-然后重新 `make` 或者 `make DEBUG=1` ，再按下`f5`或者在 vscode 顶栏依次点击`运行`->`启用调试` 即可。
+然后运行一次 `make clean` 再重新 `make` 或者 `make DEBUG=1` ，再按下`f5`或者在 vscode 顶栏依次点击`运行`->`启用调试` 即可。
 
-### 调试遭遇问题
+### 3.3调试遭遇问题
 
 调试一直卡在 `HAL_Init` 函数里...
 
@@ -239,4 +256,5 @@ void HAL_MspInit(void)
 然后 `打开终端把之前的调试任务全部停止` -> `再次 make ` -> `重新启动调试` 。
 
 > 如需要减少编译优化等级，可以进入makefile，在 `if DEBUG` 判断的编译流程添加 `-O0` ,之后重新 `make DEBUG=1` 
+
 
