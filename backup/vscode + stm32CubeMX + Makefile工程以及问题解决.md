@@ -101,12 +101,14 @@ test
 
 ![Makefile](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config7.png)
 
-6.回到`c_cpp_properties.json`，将上面复制的内容按 `以下格式(一定要注意格式)` 粘贴到`"includePath"`的中括号里，自带的第一行不要删除，在后面加上英文的逗号即可。
-将复制的内容前面的 -D 替换为工程名，这里的工程名是test，将所有内容使用英文引号包裹，每一行后面使用英文逗号结尾，最后一行不使用逗号，就像下面这样：
-
-> 以后每新增加一个工程都可用一样的方法，区别是替换的 `-D` 的工程名要修改为你希望添加的工程名，如果红色警告仍然存在，可能是重复包含，所以你可以在`c_cpp_properties.json` 中的 `"includePath"` 将之前添加的所有 include 路径注释掉，然后只保留你当前聚焦的工程 include 路径即可
+6.回到`c_cpp_properties.json`，将上面复制的内容按 `以下格式(一定要注意格式)` 粘贴到`"includePath"`的中括号里。自带的第一行不要删除，在后面加上英文的逗号即可。将复制的内容前面的 -D 替换为工程名，这里的工程名是test，将所有内容使用英文引号包裹，每一行后面使用英文逗号结尾，最后一行不使用逗号，就像下面这样：
 
 ![c_cpp_properties.json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config8.png)
+
+
+> 以后每新增加一个工程都可用一样的方法，区别是替换的 `-D` 的工程名要修改为你希望添加的工程名，如果红色警告仍然存在，可能是重复包含，所以你可以在`c_cpp_properties.json` 中的 `"includePath"` 将之前添加的所有 include 路径注释掉，然后只保留你当前聚焦的工程 include 路径即可
+> 
+![c_cpp_properties.json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config8.1.png)
 
 # 3.工程调试
 ### 3.1使用 openocd + stlink 调试
