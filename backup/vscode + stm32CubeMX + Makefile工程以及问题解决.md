@@ -105,9 +105,8 @@ test
 
 ![c_cpp_properties.json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config8.png)
 
-
 > 以后每新增加一个工程都可用一样的方法，区别是替换的 `-D` 的工程名要修改为你希望添加的工程名，如果红色警告仍然存在，可能是重复包含，所以你可以在`c_cpp_properties.json` 中的 `"includePath"` 将之前添加的所有 include 路径注释掉，然后只保留你当前聚焦的工程 include 路径即可
-> 
+
 ![c_cpp_properties.json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config8.1.png)
 
 # 3.工程调试
