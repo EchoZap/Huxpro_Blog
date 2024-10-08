@@ -1,4 +1,4 @@
-在 keil 环境中使用printf 通过串口打印数据：
+在 `keil` 环境中使用 printf 通过串口打印数据：
 
 - 在 main 文件引入`stdio.h`
 - 重写`fputc`函数
@@ -15,7 +15,8 @@
   ```
 
   完成以上配置即可在 main 函数中使用 printf 函数通过串口打印数据。
-- [ ]  在 arm-***-gcc 环境使用 printf 通过串口打印数据：
+
+在 `arm-***-gcc` 环境使用 printf 通过串口打印数据：
 
 - 不需要引入`stdio.h`头文件
 - 直接在 main.c 中重写`_write`方法即可
