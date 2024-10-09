@@ -1,6 +1,6 @@
 在 `keil` 环境中使用 printf 通过串口打印数据：
 
-- 在 main 文件引入`stdio.h`
+- 在 main.c 引入`stdio.h`
 - 重写`fputc`函数
 
   ```c
