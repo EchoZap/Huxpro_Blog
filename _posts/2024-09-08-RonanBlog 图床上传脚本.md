@@ -7,7 +7,16 @@ tags:
   - docs
 ---
 
-使用之前需要通过 `pip install PyGithub` 安装 github 库，在 `35-37`行填入相应信息并将代码保存为 imgs.py，使用方法：`usage: python imgs.py [-h] input_file [input_file ...]`
+使用之前需要通过 `pip install PyGithub` 安装 github 库
+
+在 `35-37` 行填入相应信息并将代码保存为 imgs.py：
+- `owner`:github 用户名
+- `repo`:仓库名(如 imgs)
+- `token`:github 私人访问令牌(要给予仓库读写权限)
+
+可以通过以下方法直接运行脚本或者将脚本[打包为应用程序](https://blog.ronan.us.kg/2024/09/02/python-%E6%89%93%E5%8C%85%E7%A8%8B%E5%BA%8F/)
+
+使用方法：`usage: python imgs.py [-h] input_file [input_file ...]`
 
 ```python
 from github import Github
