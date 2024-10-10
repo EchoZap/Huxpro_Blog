@@ -7,7 +7,7 @@ tags:
   - docs
 ---
 
-在 `35-37`行填入相应信息并将代码保存为 imgs.py，使用方法：`usage: imgs.py [-h] input_file [input_file ...]`
+使用之前需要通过 `pip install PyGithub` 安装 github 库，在 `35-37`行填入相应信息并将代码保存为 imgs.py，使用方法：`usage: python imgs.py [-h] input_file [input_file ...]`
 
 ```python
 from github import Github
