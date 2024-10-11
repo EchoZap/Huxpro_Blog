@@ -22,6 +22,7 @@ openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -c "program /path/proj
 注意：
 
 - 根据自己的stlink 实际版本更改`interface/stlink-v2.cfg`为适配的 stlink 配置文件
+- 根据自己的stm32单片机实际型号更改`target/stm32f1x.cfg`为适配的配置文件
 
 # 使用STM32_Programmer_CLI
 
