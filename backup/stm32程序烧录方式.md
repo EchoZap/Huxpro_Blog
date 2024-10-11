@@ -11,7 +11,7 @@ st-flash write /path/project/build.bin 0x08000000
 - 使用 `st-flash` 命令需要提前安装 stlink ，macOS 通过`brew install stlink`即可安装。
 - 烧写 `.bin` 文件需要指定 flash 起始地址，也就是 `0x08000000`(具体芯片具体地址根据手册修改)
 
-使用openocd
+# 使用openocd
 
 注意：
 
