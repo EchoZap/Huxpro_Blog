@@ -75,17 +75,17 @@ test
 
 1.新建一个 STM32CubeMX_projects 目录(以后的工程就统一放置在该目录下，建议不要放置在桌面，放在自己容易记忆的位置)，然后使用 vscode 打开该目录，并且将其保存为工作区，将工作区文件保存在希望的位置，以后可以通过双击该文件直接打开 STM32CubeMX_projects 工作区：
 
-![设立工作区](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config1.png)
+![设立工作区](https://imgs.ronan.us.kg/vscode_stm32_makefile_config1.png)
 
 
 2.在 STM32CubeMX 配置好工程，点击左侧选项卡，然后勾选绿色框里的选项选择 Makefile 导出：
 
-![建立并导出工程](https://imgs-dx3.pages.dev/blog_imgs/cubemx_makefile_project1.png)
-![建立并导出工程](https://imgs-dx3.pages.dev/blog_imgs/cubemx_makefile_project2.png)
+![建立并导出工程](https://imgs.ronan.us.kg/cubemx_makefile_project1.png)
+![建立并导出工程](https://imgs.ronan.us.kg/cubemx_makefile_project2.png)
 
 3.使用 vscode 打开该工程目录，点开`./Core/Src/main.c`，你会发现：满是令人高血压的红色波浪线，难以忍受。
 
-![红色波浪线](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config2.png)
+![红色波浪线](https://imgs.ronan.us.kg/vscode_stm32_makefile_config2.png)
 
 ---
 
@@ -95,31 +95,31 @@ test
 
 1.在工作区根目录中按下(macos)`cmd+shift+p`，(windows)`ctrl+shift+p`，输入 `C/C++` 然后点击`Edit Configurrations(JSON)`选择
 
-![创建 cpp_json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config3.png)
+![创建 cpp_json](https://imgs.ronan.us.kg/vscode_stm32_makefile_config3.png)
 
 2.接下来 vscode 会在你的工作区根目录下创建一个 .vscode 目录和一个 c_cpp_properties.json ，默认情况下你在 c_cpp_properties.json 会看到以下内容
 
-![cpp_json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config4.png)
+![cpp_json](https://imgs.ronan.us.kg/vscode_stm32_makefile_config4.png)
 
 3.打开工程根目录的`Makefile`，找到`#C defines`（也就是宏定义这部分），然后`复制绿色框里的内容`
 
-![Makefile](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config5.png)
+![Makefile](https://imgs.ronan.us.kg/vscode_stm32_makefile_config5.png)
 
 4.回到`c_cpp_properties.json`，将上面复制的内容按 `以下格式(一定要注意格式)` 粘贴到`"defines"`的中括号里，就像下面这样：
 
-![c_cpp_properties.json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config6.png)
+![c_cpp_properties.json](https://imgs.ronan.us.kg/vscode_stm32_makefile_config6.png)
 
 5.打开工程根目录的`Makefile`，找到`#C includes`（也就是头文件搜索这部分），然后`复制绿色框里的内容`
 
-![Makefile](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config7.png)
+![Makefile](https://imgs.ronan.us.kg/vscode_stm32_makefile_config7.png)
 
 6.回到`c_cpp_properties.json`，将上面复制的内容按 `以下格式(一定要注意格式)` 粘贴到`"includePath"`的中括号里。自带的第一行不要删除，在后面加上英文的逗号即可。将复制的内容前面的 -D 替换为工程名，这里的工程名是test，将所有内容使用英文引号包裹，每一行后面使用英文逗号结尾，最后一行不使用逗号，就像下面这样：
 
-![c_cpp_properties.json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config8.png)
+![c_cpp_properties.json](https://imgs.ronan.us.kg/vscode_stm32_makefile_config8.png)
 
 > 以后每新增加一个工程都可用一样的方法，区别是替换的 `-D` 的工程名要修改为你希望添加的工程名，如果红色警告仍然存在，可能是重复包含，所以你可以在`c_cpp_properties.json` 中的 `"includePath"` 将之前添加的所有 include 路径注释掉，然后只保留你当前聚焦的工程 include 路径即可
 
-![c_cpp_properties.json](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_makefile_config8.1.png)
+![c_cpp_properties.json](https://imgs.ronan.us.kg/vscode_stm32_makefile_config8.1.png)
 
 # 3.工程调试
 ### 3.1使用 openocd + stlink 调试
@@ -155,7 +155,7 @@ Remote debugging using : 3333
 
 先看效果;
 
-![debug](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_debug.png)
+![debug](https://imgs.ronan.us.kg/vscode_stm32_debug.png)
 
 实现方法：
 
@@ -226,9 +226,9 @@ tasks.json:
 
 调试一直卡在 `HAL_Init` 函数里...
 
-![issue](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_debug_issue1.png)
+![issue](https://imgs.ronan.us.kg/vscode_stm32_debug_issue1.png)
 
-![issue](https://imgs-dx3.pages.dev/blog_imgs/vscode_stm32_debug_issue2.png)
+![issue](https://imgs.ronan.us.kg/vscode_stm32_debug_issue2.png)
 
 ---
 
