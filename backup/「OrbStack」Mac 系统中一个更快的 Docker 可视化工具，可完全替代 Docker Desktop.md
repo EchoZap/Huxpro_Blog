@@ -2,7 +2,7 @@
 
 如果你也觉得 Docker Desktop 太慢了，或者之前没有可视化工具，不妨试试 OrbStack。
 
-![img](https://imgs-dx3.pages.dev/blog_imgs/orbstack.png)
+![img](https://imgs.ronan.us.kg/orbstack.png)
 
 OrbStack 是一款针对 macOS 操作系统的定制的，它的目的就是提供一个高效、轻量级的 Docker 和虚拟机（VM）管理平台。
 

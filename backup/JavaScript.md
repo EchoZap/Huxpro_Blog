@@ -4,7 +4,7 @@
 
 简单说，对象就是一组“键值对”（key-value）的集合，是一种无序的复合数据集合
 
-![img](https://imgs-dx3.pages.dev/blog_imgs/js1.png)
+![img](https://imgs.ronan.us.kg/js1.png)
 
 ```js
 var user = {

@@ -54,11 +54,11 @@ FROM是必须的，这是搭建镜像的基础
 
 * `python:3.9.19-alpine3.18`前面的`python`为镜像名称，可到dockerhub按需搜索，如下图
 
-![img](https://imgs-dx3.pages.dev/blog_imgs/dockerfile1.png)
+![img](https://imgs.ronan.us.kg/dockerfile1.png)
 
 * `python:3.9.19-alpine3.18`冒号后面的是tag，也就是标签(版本号)。**标签必须与dockerhub镜像里提供的一致，在上图点击所需镜像名称即可看到可用标签。**
 
-![img](https://imgs-dx3.pages.dev/blog_imgs/dockerfile2.png)
+![img](https://imgs.ronan.us.kg/dockerfile2.png)
 
 ```
 FROM ubuntu:20.04

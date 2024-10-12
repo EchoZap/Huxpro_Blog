@@ -8,7 +8,7 @@
 
 右键将以下图片保存到本地，假设保存的路径为 /Users/einson/Pictures/vscbg/，保存名称为 Noisefigure.png。
 
-![img](https://imgs-dx3.pages.dev/blog_imgs/noise.png)
+![img](https://imgs.ronan.us.kg/noise.png)
 
 ## 3.配置文件
 
