@@ -24,7 +24,7 @@ from botocore.exceptions import ClientError
 import argparse
 
 # Cloudflare R2 配置
-account_id = "" 这里填入账户 id
+account_id = "" # 这里填入账户 id
 access_key_id = "" # 这里填写 S3 客户端的‘访问密钥’
 secret_access_key = "" #这里填写 S3 客户端的‘机密访问密钥’
 bucket_name = "" # 这里填入你要上传文件到哪个 R2 存储桶的名称
