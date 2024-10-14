@@ -10,7 +10,7 @@ tags:
 
 在 M1 macOS 中下载 neovide 之后打开遇到：
 
-![error](https://img.ronan.us.kg/blog_imgs/neovide_error.png)
+![error](https://imgs.ronan.us.kg/neovide_error.png)
 
 #### 原因分析
 
