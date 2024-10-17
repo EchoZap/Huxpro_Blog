@@ -17,7 +17,7 @@ enable_sleep() {
 
 while true; do
 
-    LOG_FILE="/Users/a1/power_manager.log"
+    LOG_FILE="～/power_manager.log"
 
     # 获取电脑盖子状态
     lid_state=$(ioreg -r -k AppleClamshellState -d 4 | grep AppleClamshellState | head -1 | awk '{print $NF}')
