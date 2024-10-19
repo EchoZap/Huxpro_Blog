@@ -40,6 +40,8 @@ ssh-copy-id -i <~/.ssh/id_ed25519.pub> <username>@<remote_ip>
 
 其中的`<~/.ssh/id_ed25519.pub>` 是公钥所处的路径，`<username>`是用户名，`<remote_ip>`是主机名或IP 地址。
 
+这条命令会将公钥保存到远程主机的 `~/.ssh/authorized_keys` 文件中。
+
 恭喜你，现在可以不再每次登录都需要输入密码了！！！
 
 ---
