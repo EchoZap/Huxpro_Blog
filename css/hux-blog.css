@@ -1,9 +1,7 @@
 @media (min-width: 1200px) {
-  .post-container {
-    padding-right: 2%; /* 只减少文章容器的padding */
-  }
+  .post-container,
   .sidebar-container {
-    padding-right: 5%; /* 保持原来的设置 */
+    padding-right: 5%; 
   }
 }
 @media (min-width: 768px) {
